@@ -1,0 +1,110 @@
+<!-- Name: Kyle Faucher -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>About Me - Bootstrap</title>
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+<body>
+
+	<div class = "container text-center mt-5 mb-5">
+		<h1>Faucher, Kyle - <small style = "font-size: .5em;" class = "text-secondary">Software Development Methods and Tools</small> </h1>
+
+		<div class="card bg-light text-dark mt-5 mb-5">
+	    	<div class="card-body text-left">
+				I am from Colorado Springs, enjoy photography, and have a large collection of houseplants. I am studying Computer Science because I would like to get a job in web development.
+	    	</div>
+	    </div>
+
+		<br>
+
+		<h2> My Professional Profile </h2> 
+
+		<p>
+			<a class = "btn btn-outline-dark" href = "https://github.com/kylefaucher" target = "_blank">My Github Account</a>
+		</p>
+		
+		<img class = "rounded-circle mt-5 mb-5" src = "http://creative.colorado.edu/~kyfa3283/images/portrait.JPG" alt = "Portrait of Myself" width = "500">
+
+		<h3> My Favorite Projects </h3>
+
+		<table class = "table mt-5 mb-5"> 
+			<thead>
+				<tr>
+					<th> Name of the Project </th>
+					<th> Technologies Used </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td> Pivi </td>
+					<td> React, JavaScript, HTML, CSS </td>
+				</tr>
+				<tr>
+					<td> Light Mirror </td>
+					<td> Arduino </td>
+				</tr>
+				<tr>
+					<td> ALTEC Inventory </td>
+					<td> HTML, CSS, Bootstrap, DataTables.js </td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class = "row">
+			<div class= "col">
+				<h3 card bg-light text-dark> <a data-toggle="collapse" href="#countries" > Countries Travelled </a> </h3>
+
+				<ul id = "countries" class = "collapse list-group" >
+					<li class = "list-group-item"> United States </li>
+					<li class = "list-group-item"> Canada </li>
+					<li class = "list-group-item"> New Zealand </li>
+				</ul>
+			</div>
+
+			<div class= "col">
+				<h3> <a data-toggle="collapse" href="#interests" >My Interests </a></h3>
+
+				<ol id = "interests" class = "collapse list-group">
+					<li class = "list-group-item">Front-End Web Development</li>
+					<li class = "list-group-item">UI/UX Design</li>
+					<li class = "list-group-item">Photography</li>
+				</ol>
+			</div>
+		</div>
+
+		<p>
+	
+			<button class = "button btn-primary btn-lg mt-5 mb-5" data-toggle="modal" href = "#myModal"> Modal </button>
+
+		</p>
+
+		<div class="modal" tabindex="-1" role="dialog" id = "myModal">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">This is my modal header</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <p>This is the body of my modal.</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+	</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
