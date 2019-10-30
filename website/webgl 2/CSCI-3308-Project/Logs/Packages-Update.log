@@ -1,0 +1,26 @@
+
+=== Wed Sep 25 19:37:12 2019
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were updated:
+  com.unity.ide.rider from version 1.0.4 to 1.1.0
+  com.unity.ide.vscode from version 1.0.4 to 1.0.7
+
+=== Fri Sep 27 13:03:49 2019
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.postprocessing@2.1.4
+  com.unity.progrids@3.0.3-preview.4
+
+=== Mon Oct  7 21:55:51 2019
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.ide.vscode from version 1.0.7 to 1.1.2
