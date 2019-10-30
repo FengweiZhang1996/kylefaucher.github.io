@@ -26,6 +26,6 @@ $('document').ready(function(){
 	});
 
 	$('#login-button').on('click', function(){
-		window.location.href = "webgl/index.html";
+		window.location.href = "webGL-3/index.html";
 	});
 });

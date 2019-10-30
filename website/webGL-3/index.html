@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | CSCI-3308-Project</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="../webgl-style.css">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/webGL-3.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class = "container">
+      <div class = "topbar">
+        <nav class = "navbar">
+          <ul>
+            <li id = "main-logo"><div>Game</div> <div>Name</div></li>
+            <li>About</li>
+            <li>Help</li>
+            <li>Contact</li>
+            <li id = "profile"><i class="fas fa-user-circle"></i></li>
+          </ul>
+        </nav>
+      </div>
+      <div class = "live-feed"><h1>Live Feed</h1>
+        <p> User1 just joined <span class = "live-feed-time">3 min ago</span></p>
+        <p> User2 just passed level 2 <span class = "live-feed-time">10 min ago</span></p>
+        <p> User2: "I won!" <span class = "live-feed-time">12 min ago</span></p>
+      </div>
+      <div class="webgl-content">
+        <div id="unityContainer" style="width: 960px; height: 600px"></div>
+        <div class="footer">
+          <div class="webgl-logo"></div>
+          <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+          <div class="title">CSCI-3308-Project</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
