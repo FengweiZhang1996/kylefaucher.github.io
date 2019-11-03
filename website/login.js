@@ -25,7 +25,58 @@ $('document').ready(function(){
 		$('.login-container').css('height', '100%');
 	});
 
-	$('#login-button').on('click', function(){
-		window.location.href = "webGL-3/index.html";
+	$('#signup-button').on('click', function(){
+		$('.signup-error-message').empty();
+		let email = $('.signup-container #signup-username').val();
+		let password;
+		if ($('#signup-password').val() === $('#signup-confirmpassword').val()){
+			password = $('#signup-password').val();
+		}
+		else{
+			$('.signup-error-message').append('<div>Passwords do not match</div>');
+			return;
+		}
+
+		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+			if (error.code == 'auth/invalid-email'){
+				$('.signup-error-message').append('<div>Please enter a valid email</div>');
+			}
+			if (error.code == 'auth/email-already-in-use'){
+				$('.signup-error-message').append('<div>This email is already in use</div>');
+			}
+			if (error.code == 'auth/weak-password'){
+				$('.signup-error-message').append('<div>Password must be at least 6 characters</div>');
+			}
+		  console.log(error);
+		});
+
 	});
+
+	$('#login-button').on('click', function(){
+		$('.login-error-message').empty();
+		let email = $('#login-username').val();
+		let password = $('#login-password').val();
+		firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+		  	if (error.code == 'auth/wrong-password'){
+				$('.login-error-message').append('<div>Incorrect password</div>');
+			}
+			if (error.code == 'auth/user-not-found'){
+				$('.login-error-message').append('<div>Email not found</div>');
+			}
+			if (error.code == 'auth/invalid-email'){
+				$('.login-error-message').append('<div>Invalid Email</div>');
+			}
+			console.log(error);
+
+		});
+
+	});
+
+	//redirect on signup/signin
+	firebase.auth().onAuthStateChanged(function(user) {
+	  if (user) {
+	  	window.location = "webGL-3/index.html";
+	  }
+	});
+
 });
