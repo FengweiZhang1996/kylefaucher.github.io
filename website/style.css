@@ -115,3 +115,10 @@ nav.navbar ul li:hover{
 	transition: 0.75s ease;
 	height: 0;
 }
+
+.login-error-message div, .signup-error-message div {
+    border: solid 1px tomato;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+}

@@ -25,10 +25,13 @@ $('document').ready(function(){
 		$('.login-container').css('height', '100%');
 	});
 
+	//create new user in database when sign up button is clicked
 	$('#signup-button').on('click', function(){
 		$('.signup-error-message').empty();
 		let email = $('.signup-container #signup-username').val();
 		let password;
+
+		//check if passwords match
 		if ($('#signup-password').val() === $('#signup-confirmpassword').val()){
 			password = $('#signup-password').val();
 		}
@@ -52,6 +55,7 @@ $('document').ready(function(){
 
 	});
 
+	//log in when login button is clicked then redirect to game page
 	$('#login-button').on('click', function(){
 		$('.login-error-message').empty();
 		let email = $('#login-username').val();
@@ -72,7 +76,7 @@ $('document').ready(function(){
 
 	});
 
-	//redirect on signup/signin
+	//redirect on signup/login
 	firebase.auth().onAuthStateChanged(function(user) {
 	  if (user) {
 	  	window.location = "webGL-3/index.html";
