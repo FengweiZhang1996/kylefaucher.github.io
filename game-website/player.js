@@ -39,10 +39,11 @@ $('document').ready(function(){
 
 	$("#chatmessage-button").on("click", function(){
 		var message = document.getElementById('chatmessage-input').value;
+		var date = new Date();
 		console.log(message);
-		database.collection("livefeed").add({
+		database.collection("messages").add({
 			"message": message,
-			"date": getDate(),
+			"date": date.getDate(),
 			"user": firebase.auth().currentUser.email
 		})
 		.then(function(docRef){
