@@ -104,24 +104,25 @@ nav.nav-bar ul li:hover{
 }
 
 button#sign-out {
-    border: solid 1px white;
-    color: white;
+    border: solid 1px #131719;
+    color: #131719;
     font-size: .9em;
     width: 20%;
     margin: auto;
     margin-right: 0;
     cursor: pointer;
     font-weight: 500;
+    margin-top: 25px;
 }
 
 div#curUser {
     font-size: .8em;
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
 button#sign-out:hover {
-    background: white;
-    color: #131719;
+    background: #131719;
+    color: white;
 }
 
 *, ::after, ::before {
@@ -364,17 +365,41 @@ span#closemodal {
 	width: auto;
 }
 
-img#open-profile{
+/*img#open-profile{
 	border-radius: 100px;
 	height: 40px;
 	margin: auto;
 	transition: 0.25s ease;
-}
+}*/
 
-img#open-profile:hover {
+.image-cropper:hover {
    transform: scale(1.2);
    transition: .25s ease;
 }
 
+.image-cropper {
+	margin-left: 10px;
+    width: 45px;
+    height: 45px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: .25s ease;
+}
+.image-cropper img{
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
 
+.profile-image .image-cropper {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: .25s ease;
+    margin: auto;
+}
 

@@ -33,6 +33,8 @@
 
 //https://stackoverflow.com/questions/2794137/sanitizing-user-input-before-adding-it-to-the-dom-in-javascript
 
+window.alert = function() {};
+
 //Sanitizing user input
 function isAlphaNumeric(str) {
   var code, i, len;

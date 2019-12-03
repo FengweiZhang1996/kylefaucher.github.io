@@ -1,4 +1,7 @@
+window.alert = function() {};
+
 $('document').ready(function(){
+
 
 	console.log("DOCUMENT READY");
 
@@ -21,15 +24,18 @@ $('document').ready(function(){
 	  }
 	  else{
 	  	$('#curUser').html(firebase.auth().currentUser.displayName);
-	  	$('#open-profile').after('<img src ="' + firebase.auth().currentUser.photoURL + '" alt = "profile picture" />');
+	  	if(firebase.auth().currentUser.photoURL){
+	  	$('#open-profile').after('<div class = "image-cropper"><img src ="' + firebase.auth().currentUser.photoURL + '" alt = "profile picture" /></div>');
 	  	$('#open-profile').remove();
 	  	$('#profile img').attr('id', 'open-profile');
+	  	}
 	  	$('#open-profile').on('click', function(){
 				$('.userprofile').css('display', 'block');
 				$('.userprofile-sidebar').css('width', '400px');
 				$('.profile-email').html(firebase.auth().currentUser.email);
 			  	$('.profile-username').html(firebase.auth().currentUser.displayName);
-			  	$('.profile-image').html('<img src ="' + firebase.auth().currentUser.photoURL + '" alt = "profile picture" />');
+			  	if(firebase.auth().currentUser.photoURL)
+			  		$('.profile-image').html('<div class = "image-cropper"><img src ="' + firebase.auth().currentUser.photoURL + '" alt = "profile picture" /></div>');
 		});
 	  }
 	});
@@ -39,7 +45,8 @@ $('document').ready(function(){
 		$('.userprofile-sidebar').css('width', '400px');
 		$('.profile-email').html(firebase.auth().currentUser.email);
 	  	$('.profile-username').html(firebase.auth().currentUser.displayName);
-	  	$('.profile-image').html('<img src ="' + firebase.auth().currentUser.photoURL + '" alt = "profile picture" />');
+	  	if(firebase.auth().currentUser.photoURL)
+	  		$('.profile-image').html('<img src ="' + firebase.auth().currentUser.photoURL + '" alt = "profile picture" />');
 	});
 
 	$('.userprofile').on('click', function(e){
