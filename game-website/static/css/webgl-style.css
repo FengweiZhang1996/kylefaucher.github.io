@@ -455,3 +455,10 @@ span#closemodal {
 	font-size: 1.2em;
 
 }
+
+div#unityContainer:focus, .webgl-content:focus, canvas:focus {
+    outline: none;
+    border: solid 4px #373737 !important;
+    box-sizing: border-box;
+    border-radius: 15px !important;
+}
