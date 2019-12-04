@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../static/css/webgl-style.css">
     <script defer src= "../static/js/player.js"></script>
     <script defer src= "../static/js/chat.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
@@ -24,9 +25,8 @@
       <div class = "topbar">
         <nav class = "nav-bar">
           <ul>
-            <li id = "main-logo"><div>Broccoli's</div> <div>Journey</div></li>
-            <li>About</li>
-            <li>Help</li>
+            <li id = "main-logo"><div id = 'title-1'>Broccoli's</div> <div id = 'title-2'>Journey</div></li>
+            <li id = "help-button">Help</li>
             <li id = "scoreboard-button">Scoreboard</li>
             <li id = "profile"><div id = "curUser"></div><i id = "open-profile" class="fas fa-user-circle"></i></li>
           </ul>
@@ -84,7 +84,7 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Score</th>
+                  <th scope="col">Time</th>
                   <th scope="col">Username</th>
                 </tr>
               </thead>
@@ -120,6 +120,28 @@
         </div>
       </div>
 
+      <!-- Help modal -->
+      <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id = "help-modal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class = "modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Help</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span id = 'closemodal' aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class = "modal-body">
+              <h3> Controls </h3>
+              <p> Use the W A S D keys to move around in the game. Use the spacebar to jump. </p>
+              <hr>
+              <h3> Chatting </h3>
+              <p> You can use the Live Chat to talk to other players while you are playing the game. To return to playing the game after chatting, simply click back on the game. This will enable the keyboard controls again. </p>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
 
@@ -128,6 +150,7 @@
 
   <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
 
 <script>
   // Your web app's Firebase configuration

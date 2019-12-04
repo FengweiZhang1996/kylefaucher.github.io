@@ -35,7 +35,6 @@
 
 window.alert = function() {};
 
-//Sanitizing user input
 function isAlphaNumeric(str) {
   var code, i, len;
 
@@ -54,7 +53,7 @@ function isAlphaNumeric(str) {
 
 //To retrieve date
 function getDate(){
-  var today = new firebase.firestore.Timestamp.fromDate(new Date());
+  var today = new Date();
   return today;
 }
 
@@ -63,7 +62,7 @@ function getDate(){
   var docRef = database.collection("messages");
 
 
-  // When the form is submitted
+  // When the form is submitted send message to firebase
   $(document).ready(function() {
     $('#chatmessage-button').click(function () {
         // Retrieve the message from the user
@@ -75,41 +74,24 @@ function getDate(){
           //Send the message to the server
           docRef.add({
             // "user": "me",
-            "user": firebase.auth().currentUser.email, //maybe change to username
+            "user": firebase.auth().currentUser.displayName, //maybe change to username
             "message": message,
-            "date": getDate()
+            "date": getDate(),
+            "photoURL": firebase.auth().currentUser.photoURL
           })
           .then(function(docRef){
-        			//console.log("document written with ID: " + docRef.id);
-        	})
-        	.catch(function(error){
-        			console.log(error);
-        	});
+        console.log("document written with ID: " + docRef.id);
+        })
+        .catch(function(error){
+        console.log(error);
+        });
         }
       // Clear the input and focus it for a new message
       $('#chatmessage-input').val("");
       $('#chatmessage-input').focus();
       // $(e.target).find('input').focus();
 
-      $(".live-feed").animate({ scrollTop: $('.live-feed').height() }, "slow");
-    });
-
-
-
-    //Live updates and Message retrieval
-    docRef.orderBy("date", "asc")
-        .onSnapshot(function(snapshot) {
-        snapshot.docChanges().forEach(function(change) {
-          var data = change.doc.data();
-          var user = data.user;
-          var date = data.date.toDate();
-          var message = data.message;
-          //FORMATTING
-          var formatted_message = '<p><strong>' + user + ':  ' + '</strong>'
-          + message + '</br>' + '<span class = "live-feed-time">Sent on ' + date + '</span>' + '</p>';
-          //APPEND TO HTML
-          $('.live-feed').append(formatted_message);
-        });
+      $(".live-feed").animate({ scrollTop: 100000000000 }, "slow");
     });
 
   });

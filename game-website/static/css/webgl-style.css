@@ -23,14 +23,56 @@ body{
     margin-bottom: 0;
 }
 
-.live-feed p {
-    padding: 15px;
+.live-feed p{
+	padding: 15px;
+}
+
+.live-feed p, .live-feed>div {
+    /*padding-top: 15px;*/
+    /*padding-bottom: 15px;*/
     border-bottom: solid 1px #ffffff17;
     margin-top: 0;
-    display: flex;
+    /*display: flex;*/
     font-size: .9em;
     margin-bottom: 0;
     justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.live-feed-time{
+	margin-bottom: 15px;
+	margin-top: 5px;
+	opacity: 0.6;
+	grid-column: 1/4;
+	text-align: center;
+}
+
+.live-feed strong{
+    text-align: left;
+    margin-right: 5px;
+}
+
+.live-feed::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+.live-feed::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+.live-feed div>div{
+	text-align: center;
+}
+
+.live-feed>div{
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr;
+	text-align: left;
+}
+
+.live-feed div img{
+	width: 100%;
 }
 
 .live-feed-time{
@@ -403,3 +445,13 @@ span#closemodal {
     margin: auto;
 }
 
+#title-1{
+	font-family: 'Press Start 2P', sans-serif;
+	font-size: 0.75em;
+}
+
+#title-2{
+	font-family: 'Press Start 2P', sans-serif;
+	font-size: 1.2em;
+
+}
