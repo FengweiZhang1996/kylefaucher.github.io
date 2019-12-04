@@ -20,9 +20,10 @@ function UnityProgress(unityInstance, progress) {
   unityInstance.progress.full.style.width = (100 * progress) + "%";
   unityInstance.progress.empty.style.width = (100 * (1 - progress)) + "%";
   if (progress == 1){
+    unityInstance.logo.style.display = unityInstance.progress.style.display = "none";
     console.log("*****GAME LOADED******");
     console.log("!!!!!!!" + firebase.auth().currentUser.displayName);
-    unityInstance.SendMessage('canvas', 'setUser', firebase.auth().currentUser.displayName);
-    unityInstance.logo.style.display = unityInstance.progress.style.display = "none";
+    unityInstance.SendMessage('Canvas', 'SetUser', firebase.auth().currentUser.displayName);
+
   }
 }
