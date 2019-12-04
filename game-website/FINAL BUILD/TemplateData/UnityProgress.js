@@ -22,8 +22,8 @@ function UnityProgress(unityInstance, progress) {
   if (progress == 1){
     unityInstance.logo.style.display = unityInstance.progress.style.display = "none";
     console.log("*****GAME LOADED******");
+    console.log(unityInstance);
     console.log("!!!!!!!" + firebase.auth().currentUser.displayName);
-    unityInstance.SendMessage('Canvas', 'SetUser', firebase.auth().currentUser.displayName);
-
+    unityInstance.SendMessage('Canvas', 'Canvas.GetComponent<PlayerTime>().getUser', firebase.auth().currentUser.displayName);
   }
 }

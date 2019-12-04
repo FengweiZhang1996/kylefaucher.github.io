@@ -84,6 +84,34 @@ $('document').ready(function(){
 		$('#help-modal').modal('show');
 	});
 
+	var database2 = firebase.database();
+	var scoreboardJSON;
+
+	var database2ref = firebase.database().ref('/users/');
+	database2ref.on('value', function(snapshot) {
+		console.log("DATABASE 2 VALUES !!!!");
+		scoreboardJSON = snapshot.val();
+	 	console.log(scoreboardJSON);
+	 	let scoreIndex = 1;
+	 	let scoreboardARRAY = [];
+
+	 	$('table tbody').append('<tr> <td>'+scoreboardJSON.Guest.finalTime+'</td> <td>'+scoreboardJSON.Guest.userName+'</td> </tr>');
+		    scoreIndex++;
+
+	 // 	for (var key in scoreboardJSON) {
+		//   if (scoreboardJSON.hasOwnProperty(key)) {
+
+		//     console.log(key + ": " + scoreboardJSON[key].userName + scoreboardJSON[key].finalTime);
+		//     scoreboardARRAY.push(scoreboardJSON[key]);
+
+		//     $('table tbody').append('<tr> <td>'+scoreboardJSON[key].finalTime+'</td> <td>'+scoreboardJSON[key].userName+'</td> </tr>');
+		//     scoreIndex++;
+		//   }
+		// }
+			console.log('ARRAY');
+		    console.log(scoreboardARRAY);
+	});
+
 
 	var MessagesdocRef = database.collection("messages");
 	//Live updates and Message retrieval
