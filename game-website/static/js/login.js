@@ -108,7 +108,7 @@ $('document').ready(function(){
                   }).then(function() {
 
                     console.log('profile updated successfully');
-                   	window.location = "webGL/index.html";
+                   	window.location = "finalbuild/index.html";
 
                   }, function(error) {
                     console.log(error);
