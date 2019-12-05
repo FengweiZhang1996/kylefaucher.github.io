@@ -115,7 +115,7 @@ $('document').ready(function(){
                   });
               }
               else{
-              		window.location = "finalbuild2/index.html";
+              		window.location = "last/index.html";
               }
 	  }
 	});
